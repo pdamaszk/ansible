@@ -44,7 +44,6 @@
         mode: 0440
 
     - name: add ansible-pull cron job
-#      become: true
       cron:
         name: ansible auto-provision
         user: velociraptor
