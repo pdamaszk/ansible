@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   become: true
-  pre_task:
+  pre_tasks:
     # sudo apt update
     - name: pre-run | update package cache (debian, etc)
       tags: always
