@@ -1,0 +1,35 @@
+# task to complete before running roles
+- hosts: all
+  tags: slways
+  become: true
+  pre_task:
+    # sudo pacman update
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      when: ansible_distribution == "Archlinux"
+
+    # sudo apt update
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      pacman: update_cache=yes
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+# run roles
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
+
+- hosts: workstation
+  tags: workstation
+  become: true
+  roles:
+    - workstation
+
+- hosts: server
+  tags: server
+  become: true
+  roles:
+    - server
