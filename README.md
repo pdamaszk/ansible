@@ -8,6 +8,9 @@ sudo ansible-pull -U https://github.com/pdamaszk/ansible.git
 sudo journalctl | grep CRON | grep ansible-pull
 ```
 ```
+sudo crontab -u velociraptor -l
+```
+```
 ansible all --key-file ~/.ssh/ansible_ed25519 -i hosts
 ```
 
