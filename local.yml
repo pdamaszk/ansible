@@ -24,11 +24,9 @@
 #          - vim-nox
 
     - name: copy .bashrc file
-      become_user: p4810
       copy:
         src: files/bashrc
-        dest: "~/.bashrc"
-#        dest: "{{ ansible_env.HOME }}/file_test.txt"
+        dest: "/home/p4810/.bashrc"
         owner: p4810
         group: p4810
 
@@ -46,7 +44,7 @@
         mode: 0440
 
     - name: add ansible-pull cron job
-      become: true
+#      become: true
       cron:
         name: ansible auto-provision
         user: velociraptor
