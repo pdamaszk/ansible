@@ -1,0 +1,42 @@
+[automatyzacja]
+  ansible
+  jenkins
+  Terraform
+
+[skrypty]
+  script bash
+  script Groovy
+
+[narzędzia kontenerowe]
+  Doker
+  Kubernetes
+
+[Chmura Obliczeniowa]
+  Amazon Web Services (AWS)
+  Microsoft Azure
+  Google Cloud Platform (GCP)
+  IBM Cloud
+  Oracle Cloud:
+
+[NAS]
+  TrueNAS
+  OpenMediaVault
+  CasaOS
+
+[języki programowania]
+  python
+
+[bazy danych]
+  mysql
+  pgsql
+
+[narzędzia do monitoringu]
+  zabbix 
+  pmm
+  graylog
+
+[konrola wersji]
+  Gitlab
+  GiyHub
+
+
