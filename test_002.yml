@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  # as root
+  become: true
+  # as other user
+  become_user: p4810
+
+  tasks:
+    - name: Sprawdź, czy system to Debian
+      set_fact:
+        is_debian: "{{ ansible_facts['os_family'] == 'Debian' }}"
+
+    - name: Wyświetl wiadomość w zależności od tego, czy system ma GUI
+      debug:
+        msg: "{{ 'System supports GUI' if has_gui else 'System CLI only' }}"
+
+
+
