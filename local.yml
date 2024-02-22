@@ -4,7 +4,7 @@
   # as root
   become: true
   # as other user
-  become_user: p4810
+#  become_user: p4810
 
   pre_tasks:
     # sudo apt update
@@ -23,13 +23,14 @@
 #          - nano
 #          - vim-nox
 
-#    - name: copy file test
-#      copy:
-#        src: files/file_001.txt
-#        dest: "~/file_test1.txt"
-##        dest: "{{ ansible_env.HOME }}/file_test.txt"
-#        owner: p4810
-#        group: p4810
+    - name: copy .bashrc file
+      become_user: p4810
+      copy:
+        src: files/bashrc
+        dest: "~/.bashrc"
+#        dest: "{{ ansible_env.HOME }}/file_test.txt"
+        owner: p4810
+        group: p4810
 
 ## task to complete before running roles
 #- hosts: all

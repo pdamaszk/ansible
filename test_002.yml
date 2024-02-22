@@ -7,6 +7,15 @@
   become_user: p4810
 
   tasks:
+    - name: Sprawdź, czy GUI jest zainstalowany
+      command: which startx
+      register: gui_check
+      failed_when: false
+
+    - name: Ustaw fakt, czy GUI jest zainstalowany
+      set_fact:
+        has_gui: "{{ gui_check.rc == 0 }}"
+
     - name: Sprawdź, czy system to Debian
       set_fact:
         is_debian: "{{ ansible_facts['os_family'] == 'Debian' }}"
