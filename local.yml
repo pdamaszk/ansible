@@ -53,8 +53,8 @@
         minute: "*/10"
         # >   sudo crontab -u velociraptor -l
         # >   sudo journalctl | grep CRON | grep ansible-pull
-        job: ansible-pull -o -U https://github.com/pdamaszk/ansible.git
-
+        job: ansible-pull -o -U https://github.com/pdamaszk/ansible.git >> /home/velociraptor/logfile.log 2>&1
+#        job: ansible-pull -o -U https://github.com/pdamaszk/ansible.git
 ## task to complete before running roles
 #- hosts: all
 #  tags: slways
