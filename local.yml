@@ -50,6 +50,7 @@
         name: ansible auto-provision
         user: velociraptor
         minute: "*/10"
+        # sudo crontab -u velociraptor -l
         job: ansible-pull -o -U https://github.com/pdamaszk/ansible.git
 
 ## task to complete before running roles
